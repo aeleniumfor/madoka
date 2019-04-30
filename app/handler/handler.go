@@ -6,9 +6,16 @@ import (
 )
 
 
-// MainPage is 
-func MainPage() echo.HandlerFunc {
-    return func(c echo.Context) error {     //c をいじって Request, Responseを色々する 
-        return c.String(http.StatusOK, "Hello World")
+// AuthTest is AurtTest
+func AuthTest() echo.HandlerFunc {
+    return func(c echo.Context) error { // なにか考える
+        return c.String(http.StatusOK, "")
+    }
+}
+
+// AddNetwork is network Adding
+func AddNetwork() echo.HandlerFunc {
+	return func(c echo.Context) error { // なにか考える
+        return c.String(http.StatusOK, "")
     }
 }

@@ -18,8 +18,8 @@ func AuthTest() echo.HandlerFunc {
 	}
 }
 
-// AddNetwork is network Adding
-func AddNetwork() echo.HandlerFunc {
+// AddNetworkHandler is network Adding
+func AddNetworkHandler() echo.HandlerFunc {
 	return func(c echo.Context) error { // コンテナへIPを追加
 		u := new(Net)
 		if err := c.Bind(u); err != nil {

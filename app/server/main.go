@@ -33,8 +33,8 @@ func main() {
 	}
 	fmt.Println(cninet)
 
-	containerID := "de72f482b5c907afebc1983e249a6b94c34252050b0b8f7656d0d64662662ea9"
-	netns := "/var/run/docker/netns/d314b983720c"
+	containerID := "e35d1b5c6f4779416d20b31175765542673caf85f22a5f6f4007418992220356"
+	netns := "/var/run/docker/netns/8ae6ce49f163"
 	ifName := "eth0"
 	cniArgs := [][2]string{}
 	var capabilityArgs map[string]interface{}
@@ -54,4 +54,5 @@ func main() {
 
 	// cninet.DelNetworkList(context.TODO(), netconf, rt)
 	cninet.AddNetworkList(context.TODO(), netconf, rt)
+	// 10.22.0.3/16
 }

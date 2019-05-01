@@ -39,10 +39,10 @@ func main() {
 	cniArgs := [][2]string{}
 	var capabilityArgs map[string]interface{}
 
-	fmt.Println(containerID)
-	fmt.Println(netns)
-	fmt.Println(ifName)
-	fmt.Println(cniArgs)
+	// fmt.Println(containerID)
+	// fmt.Println(netns)
+	// fmt.Println(ifName)
+	// fmt.Println(cniArgs)
 
 	rt := &libcni.RuntimeConf{
 		ContainerID:    containerID,
@@ -54,5 +54,6 @@ func main() {
 
 	// cninet.DelNetworkList(context.TODO(), netconf, rt)
 	cninet.AddNetworkList(context.TODO(), netconf, rt)
+	cninet.CheckNetworkList(context.TODO(), netconf, rt)
 	// 10.22.0.3/16
 }

@@ -29,3 +29,15 @@ func AddNetworkHandler() echo.HandlerFunc {
 		return c.JSON(http.StatusOK, u)
 	}
 }
+
+// DelNetworkHandler is network Adding
+func DelNetworkHandler() echo.HandlerFunc {
+	return func(c echo.Context) error { // コンテナへIPを追加
+		u := new(Net)
+		if err := c.Bind(u); err != nil {
+			return err
+        }
+        fmt.Println(u.ContainerID)
+		return c.JSON(http.StatusOK, u)
+	}
+}

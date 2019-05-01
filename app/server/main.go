@@ -12,8 +12,9 @@ func main() {
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 
-	e.GET("/auth/test", handler.MainPage())
-
+	e.GET("/auth/test",handler.AuthTest())
+	e.POST("/container/network",handler.AddNetwork())
+	
 	fmt.Println("madoka")
-	e.Start(":1323")
+	e.Start(":8081")
 }

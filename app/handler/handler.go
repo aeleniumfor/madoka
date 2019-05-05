@@ -41,3 +41,11 @@ func DelNetworkHandler() echo.HandlerFunc {
 		return c.JSON(http.StatusOK, u)
 	}
 }
+
+
+// NetworkList is AurtTest
+func NetworkList() echo.HandlerFunc {
+	return func(c echo.Context) error {
+		return c.String(200,"OK")
+	}
+}

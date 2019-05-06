@@ -9,7 +9,6 @@ import (
 
 // Net is controll network
 type Net struct {
-	Command      string `json:"Command"`
 	ContainerID  string `json:"Container_Id"`
 	NetNamespace string `json:"NetNs"`
 }
@@ -28,8 +27,11 @@ func AddNetworkHandler() echo.HandlerFunc {
 		if err := c.Bind(u); err != nil {
 			return err
 		}
-		fmt.Println(u.ContainerID)
-		return c.JSON(http.StatusOK, u)
+		if len(u.ContainerID) > 0 && len(u.NetNamespace) > 0 {
+			return c.JSON(http.StatusOK, "")
+		} else {
+			return c.JSON(422, "")
+		}
 	}
 }
 

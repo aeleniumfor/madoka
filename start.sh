@@ -13,4 +13,4 @@ echo '{"cniVersion": "0.2.0","name": "mynet","type": "bridge","bridge": "cni0","
 
 systemctl enable docker
 systemctl start docker
-yum -y install bridge-utils
+yum -y install bridge-utils vim

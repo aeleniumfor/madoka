@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/labstack/echo/middleware"
-	"github.com/labstack/echo"
-	"github.com/madoka/app/handler"
 	"fmt"
+	"github.com/labstack/echo"
+	"github.com/labstack/echo/middleware"
+	"github.com/madoka/app/handler"
 )
 
 func main() {
@@ -12,8 +12,8 @@ func main() {
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 
-	e.GET("/auth/test",handler.AuthTest())
-	e.POST("/container/ip",handler.AddNetworkHandler())
+	e.GET("/auth/test", handler.AuthTest())
+	e.POST("/container/ip", handler.AddNetworkHandler())
 
 	fmt.Println("madoka")
 	e.Start(":8081")

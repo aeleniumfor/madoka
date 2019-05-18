@@ -5,11 +5,10 @@ import (
 	
 )
 
-
-
 // AuthTest is AurtTest
 func AuthTest() echo.HandlerFunc {
-	return func(c echo.Context) error { // なにか考える
+	return func(c echo.Context) error {
+
 		return c.String(200, "")
 	}
 }

@@ -8,13 +8,11 @@ import (
 )
 
 func main() {
-	e := echo.New()
-	e.Use(middleware.Logger())
-	e.Use(middleware.Recover())
-
-	e.GET("/auth/test",handler.AuthTest())
-	e.POST("/container/network",handler.AddNetworkHandler())
-
+	s := echo.New()
+	s.Use(middleware.Logger())
+	
+	s.GET("/auth/test",handler.AuthTest())
+	
 	fmt.Println("madoka")
-	e.Start(":8081")
+	s.Start(":8081")
 }

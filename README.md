@@ -1,1 +1,2 @@
-# madoka
+# madoka  
+madoka is controller

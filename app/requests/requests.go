@@ -17,6 +17,8 @@ func CreateContainerRequests() {
 		url,
 		nil,
 	)
+
+	
 	req.Header.Set("Content-type", "application/json")
 	res, err := client.Do(req)
 	fmt.Println(err)

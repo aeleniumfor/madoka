@@ -1,20 +1,35 @@
-package requests
+package main
 
 import (
-	"bytes"
-	"net/http"
 	"encoding/json"
+	"fmt"
+	"io/ioutil"
+	"net/http"
 	"github.com/madoka/app/common"
 )
 
 // CreateContainerRequests is Requests 
-func CreateContainerRequests(c common.Container) {
-	url := "/win"
-	json, _ := json.Marshal(c)
+func CreateContainerRequests() {
+	client := &http.Client{}
+	url := "http://localhost:8080/container/list/id"
 	req, _ := http.NewRequest(
-		"POST",
+		"GET",
 		url,
-		bytes.NewBuffer([]byte(json)),
+		nil,
 	)
 	req.Header.Set("Content-type", "application/json")
+	res, err := client.Do(req)
+	fmt.Println(err)
+	data, _ := ioutil.ReadAll(res.Body)
+
+	containerIDList:= new(common.ResCotainerIDList)
+	json.Unmarshal(data, &containerIDList)
+	res.Body.Close()
+	fmt.Println(*containerIDList)
+}
+
+
+
+func main(){
+	CreateContainerRequests()
 }

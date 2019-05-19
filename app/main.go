@@ -12,7 +12,7 @@ func main() {
 	s.Use(middleware.Logger())
 
 	s.GET("/auth/test", handler.AuthTest())
-
+	s.GET("/container/list/id",handler.CreateContainer())
 	fmt.Println("madoka")
 	s.Start(":8081")
 }
